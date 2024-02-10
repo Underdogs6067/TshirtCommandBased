@@ -26,7 +26,7 @@ Children:
             default: '0'
             name: Output Channel (PWM)
             validators: &id004 [PWMOutput]
-            value: '0'
+            value: '3'
           Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
             name: Inverted, validators: null, value: false}
         Base: Motor Controller
@@ -50,7 +50,7 @@ Children:
             default: '0'
             name: Output Channel (PWM)
             validators: *id004
-            value: '1'
+            value: '0'
           Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
             name: Inverted, validators: null, value: false}
         Base: Motor Controller
@@ -98,7 +98,7 @@ Children:
             default: '0'
             name: Output Channel (PWM)
             validators: *id004
-            value: '3'
+            value: '1'
           Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
             name: Inverted, validators: null, value: false}
         Base: Motor Controller
@@ -185,10 +185,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id005 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id005
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
@@ -210,16 +210,16 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id006
+        default: []
+        name: Parameter presets
+        validators: null
+        value:
         - !!robotbuilder.data.properties.ParameterSet
           name: Joystick1
           parameters:
           - {name: xAxis, type: DoubleSupplier, value: () -> getJoystick1().getX()}
           - {name: yAxis, type: DoubleSupplier, value: () -> getJoystick1().getY()}
           - {name: zAxis, type: DoubleSupplier, value: () -> getJoystick1().getZ()}
-        name: Parameter presets
-        validators: null
-        value: *id006
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
