@@ -1,13 +1,11 @@
+//Drivetrain
 
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
-import java.util.concurrent.RejectedExecutionHandler;
 import java.util.function.DoubleSupplier;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.PWMMotorController;
 import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 
 public class Drivetrain extends SubsystemBase {
@@ -33,9 +31,8 @@ public class Drivetrain extends SubsystemBase {
         differentialDrive1.setMaxOutput(1.0);
     }
 
-    public Command differentialDriveCommand
-    (DoubleSupplier leftstick, DoubleSupplier rightstick) {
-        return run(() -> differentialDrive1.differentialDrive1(leftstick.getAsDouble(),
+    public Command differentialDriveCommand(DoubleSupplier leftstick, DoubleSupplier rightstick) {
+        return run(() -> differentialDrive1.arcadeDrive(leftstick.getAsDouble(),
         rightstick.getAsDouble()));
     }
 
@@ -48,6 +45,6 @@ public class Drivetrain extends SubsystemBase {
     }
 
     // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+    // here. Call these from Commands
 
 }
